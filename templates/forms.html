@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1><center>Threat Prediction</center></h1>
+    <div class="container">
+        <h1>Input Form</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="protocol">Protocol:</label><br/>
+                {{ form.protocol }}
+            </div>
+            <div class="form-group">
+                <label for="sourcePort">Source Port:</label><br/>
+                {{ form.sourcePort }}
+            </div>
+            <div class="form-group">
+                <label for="destPort">Destination Port:</label><br/>
+                {{ form.destPort }}
+            </div>
+            <div class="form-group">
+                <label for="size">Size:</label><br/>
+                {{ form.size }}
+            </div>
+            <div class="form-group">
+                <label for="seqNumber">Sequence Number:</label><br/>
+                {{ form.seqNumber }}
+            </div>
+            <div class="form-group">
+                <label for="ackNumber">Acknowledgment Number:</label><br/>
+                {{ form.ackNumber }}
+            </div>
+            <button class="btn" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
